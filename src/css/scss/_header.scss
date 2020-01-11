@@ -1,0 +1,50 @@
+.header{
+    width:100%;
+    padding-top: 5px;
+
+    padding-bottom: 5px;
+    border-bottom: 4px solid black;
+    font-size: 2em;
+    text-align:center;
+    font-family: "Raleway";
+    color:black;
+    &-title{
+        font-family: "Raleway";
+        font-weight: 800;
+        letter-spacing:3px;
+        &_{
+            font-weight: 400;
+        }
+    }
+}
+.wel{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    flex:1;
+    &Selector{
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        &>a{
+            text-decoration:inherit;
+        }
+        &_Button{
+            font-family:'Open Sans';
+            padding: 1em;
+            text-decoration: none;
+            margin: 1em;
+            margin-top: 0.5em;
+            display: block;
+            background-color: #321;
+            color:white;
+            transition:opacity .3s;
+            &:hover{
+                opacity:0.5;
+
+            }
+        }
+    }
+}

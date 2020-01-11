@@ -1,6 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap");
 * {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+body {
+  background-color: #fffffa;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fffffa;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.header {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid black;
+  font-size: 2em;
+  text-align: center;
+  font-family: "Raleway";
+  color: black;
+}
+
+.header-title {
+  font-family: "Raleway";
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.header-title_ {
+  font-weight: 400;
+}
+
+.wel {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.welSelector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-decoration: none;
+}
+
+.welSelector > a {
+  text-decoration: inherit;
+}
+
+.welSelector_Button {
+  font-family: 'Open Sans';
+  padding: 1em;
+  text-decoration: none;
+  margin: 1em;
+  margin-top: 0.5em;
+  display: block;
+  background-color: #321;
+  color: white;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.welSelector_Button:hover {
+  opacity: 0.5;
 }
 /*# sourceMappingURL=style.css.map */
