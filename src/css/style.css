@@ -2,57 +2,90 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+  border: 0; }
+a{
+  text-decoration: none;
 }
+.hidden{
+  display:none;
+}
+  .fileupload {
+      width: 100px;
+      height: 50px;
+      position: relative;
+      overflow: hidden;
+      background: ...; /* and other things to make it pretty */
 
-input, textarea {
-  background-color: #d1d1d1;
+  }
+  .bp{background-color: pink}
+  .fileupload input {
+      position: absolute;
+      top: 0;
+      right: 0; /* not left, because only the right part of the input seems to
+                   be clickable in some browser I can't remember */
+      cursor: pointer;
+      opacity: 0.0;
+      filter: alpha(opacity=0); /* and all the other old opacity stuff you
+                                   want to support */
+      font-size: 300px; /* wtf, but apparently the most reliable way to make
+                           a large part of the input clickable in most browsers */
+      height: 300px;
+  }
+#upload{
+  padding-top:40px;
 }
+.pf{flex:0.1;height:130px;}
+.mid{
+  margin-top: 150px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+}
+.fn-light{  color: #ecf0f1;}
+input[type=text]{
+  width:100%;
+}
+.nmu{margin-bottom:-20px}
+input, textarea {
+  background-color: #d1d1d1; }
 
 body {
-  background-color: #fffffa;
-}
-
+  background-color: #fffffa; }
 .container {
   margin-right: auto;
   margin-left: auto;
   background-color: #fffffa;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
+  flex-direction: column; }
+  .container-body {
+    flex: 1;
+    display: flex; }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px; } }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px; } }
 
-.container-body {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
+.flex-item {
+  flex: 1; }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
+.flex-container {
+  display: flex; }
 
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
+.tables {
+  text-align: center; }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+.mleft {
+  margin-left: 20; }
+
+.mright {
+  margin-right: 20; }
 
 .header {
   width: 100%;
@@ -62,92 +95,74 @@ body {
   font-size: 2em;
   text-align: center;
   font-family: "Raleway";
-  color: black;
-}
-
-.header-title {
-  font-family: "Raleway";
-  font-weight: 800;
-  letter-spacing: 3px;
-}
-
-.header-title_ {
-  font-weight: 400;
-}
+  color: black; }
+  .header-title {
+    font-family: "Raleway";
+    font-weight: 800;
+    letter-spacing: 3px; }
+    .header-title_ {
+      font-weight: 400; }
 
 .wel {
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.welSelector {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-decoration: none;
-}
-
-.welSelector > a {
-  text-decoration: inherit;
-}
-
-.welSelector_Button {
-  font-family: 'Open Sans';
-  padding: 1em;
-  text-decoration: none;
-  margin: 1em;
-  margin-top: 0.5em;
-  display: block;
-  background-color: #321;
-  color: white;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
-}
-
-.welSelector_Button:hover {
-  opacity: 0.5;
-}
-
-.container {
-  padding-bottom: 10vh;
-}
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1; }
+  .welSelector {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none; }
+    .welSelector > a {
+      text-decoration: inherit; }
+    .welSelector_Button {
+      font-family: 'Open Sans';
+      padding: 1em;
+      text-decoration: none;
+      margin: 1em;
+      margin-top: 0.5em;
+      display: block;
+      background-color: #321;
+      color: white;
+      transition: opacity .3s; }
+      .welSelector_Button:hover {
+        opacity: 0.5; }
 
 .cnvs {
   position: absolute;
   top: 0;
-  left: 0;
-}
+  left: 0; }
 
-.stretch {
-  height: 100%;
-  width: 100%;
-}
+ul {
+  list-style-type: none; }
 
-input {
-  background-color: #d1d1d1;
-}
+.box {
+  background-color: green;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Raleway'; }
 
-.tt {
-  background-size: cover;
-  width: 100%;
-}
+.btn-dark {
+  background-color: #34495e;
+  color: #ecf0f1; }
+
+.btn-light {
+  background-color: #ecf0f1;
+  color: #2c3e50; }
+
+.table-center {
+  position: absolute; }
+
+.table-container {
+  width: 300px; }
+
+.table-head {
+  font-size: 1.1rem; }
+
+.table-entry {
+  padding: 10px;
+  font-size: 0.9rem;
+  margin: 5px 0px; }
+
 /*# sourceMappingURL=style.css.map */
