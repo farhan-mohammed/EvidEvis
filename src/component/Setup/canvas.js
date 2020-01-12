@@ -110,7 +110,7 @@ class Canvas extends React.Component {
           </div>
         </div>
         <ul className="table-container btn-dark mid2 hidden" ref='nametaker'>
-          <li className='box btn-dark table-head nmu'>Name of location</li>
+          <li className='box btn-dark table-head nmu'  onClick={()=>{this.refs.nametaker.classList.add('hidden')}}  >Name of location</li>
           <li className='box btn-dark nmu'><input className='box btn-light flex-item' tabletype="text" ref="name"/></li>
           <li className="box btn-dark"><a className="fn-light"href="#" onClick={()=>{this.submitname()}}>Submit</a></li>
         </ul>

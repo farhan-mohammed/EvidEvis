@@ -14,9 +14,11 @@ epochcon(utcSeconds){
   d.setUTCSeconds(utcSeconds);
   var hour = d.getHours(),
       minute = '' + d.getMinutes(),
-      seconds = d.getSeconds();
+      seconds = d.getSeconds(),
+      day = d.getDate()+1,
+      month = d.getMonth()+1;
 
-  return [hour, minute, seconds].join(':');
+  return [month,day].join('/')+" "+[ hour, minute, seconds].join(':');
   return(d)
 }
 searchTime = async(devID) =>{
@@ -33,7 +35,7 @@ searchTime = async(devID) =>{
     this.forceUpdate();
 };
 
-renderList = () => this.props.dataResponse.map(item=><p className="box btn-light table-snippet"><a href="#" onClick={()=>{this.searchTime(item.id)}}>{this.epochcon(item.id)}</a></p>)
+renderList = () => this.props.dataResponse.map(item=><p className="box btn-light fn-2 table-snippet"><a href="#" onClick={()=>{this.searchTime(item.id)}}>{this.epochcon(item.id)}</a></p>)
   render(){
       if (Object.getOwnPropertyNames(this.props.dataResponse).length === 0){
       return <div></div>
