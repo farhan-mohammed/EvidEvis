@@ -39,6 +39,15 @@ a{
   right:90px;
   top:100px;
 }
+
+#timeline{
+  position: fixed;
+  bottom: 50px;
+  width: 500px;
+  height:50px;
+  left:50%;
+  margin-left:-250px;
+}
 .pf{flex:0.1;height:130px;}
 .mid{
   margin-top: 150px;
@@ -169,6 +178,15 @@ ul {
 .table-container {
   width: 300px; }
 
+.table-snippet-container{
+  flex-wrap: wrap;
+  flex-flow: row;
+}
+.table-snippet{
+  width: 50px;
+  padding:5px;
+  margin:5px;
+}
 .table-head {
   font-size: 1.1rem; }
 
