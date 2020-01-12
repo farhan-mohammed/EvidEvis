@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/EvidEvis/static/css/main.7d752c0c.chunk.css",
+    "main.js": "/EvidEvis/static/js/main.a1324512.chunk.js",
+    "main.js.map": "/EvidEvis/static/js/main.a1324512.chunk.js.map",
+    "runtime-main.js": "/EvidEvis/static/js/runtime-main.d3332eda.js",
+    "runtime-main.js.map": "/EvidEvis/static/js/runtime-main.d3332eda.js.map",
+    "static/js/2.ba4904f6.chunk.js": "/EvidEvis/static/js/2.ba4904f6.chunk.js",
+    "static/js/2.ba4904f6.chunk.js.map": "/EvidEvis/static/js/2.ba4904f6.chunk.js.map",
+    "index.html": "/EvidEvis/index.html",
+    "precache-manifest.9f1ed75980b8e5c311e8889f2bdb7705.js": "/EvidEvis/precache-manifest.9f1ed75980b8e5c311e8889f2bdb7705.js",
+    "service-worker.js": "/EvidEvis/service-worker.js",
+    "static/css/main.7d752c0c.chunk.css.map": "/EvidEvis/static/css/main.7d752c0c.chunk.css.map",
+    "static/js/2.ba4904f6.chunk.js.LICENSE": "/EvidEvis/static/js/2.ba4904f6.chunk.js.LICENSE",
+    "static/media/map.png": "/EvidEvis/static/media/map.ca0086a0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d3332eda.js",
+    "static/js/2.ba4904f6.chunk.js",
+    "static/css/main.7d752c0c.chunk.css",
+    "static/js/main.a1324512.chunk.js"
+  ]
+}
