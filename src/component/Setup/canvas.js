@@ -142,7 +142,8 @@ class Canvas extends React.Component {
         <canvas
           ref="timeline"
           id="timeline"
-          className="bp hidden"
+          className=""
+          display="none"
           onClick={(e) => {
             this.update(e.clientX, e.clientY);
           }}

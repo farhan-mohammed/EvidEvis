@@ -11,11 +11,11 @@ class Location extends React.Component {
     ctx.beginPath();
     ctx.arc(this.props.x, this.props.y, 15, 0, 2 * Math.PI, false);
     ctx.textAlign = "center";
-    ctx.fillStyle = 'green';
+    ctx.fillStyle = '#34495e';
     ctx.fillText(this.props.name, this.props.x, this.props.y+30)
     ctx.fill();
     ctx.lineWidth = 4;
-    ctx.strokeStyle = '#003300';
+    ctx.strokeStyle = 'black';
     ctx.stroke();
   }
 

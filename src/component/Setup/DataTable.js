@@ -16,6 +16,10 @@ class DataTable extends React.Component {
           const apiResponse = await ListQuery.get(`/events?device-id=${devID.toString()}`);
           this.setState({ resp:apiResponse.data});
       };
+	searchTime = async(devID) =>{
+			const apiResponse = await ListQuery.get(`/events?id=${devID.toString()}`);
+			this.setState({ resp:apiResponse.data});
+	};
 	render() {
 		console.log(this.props)
 		return(

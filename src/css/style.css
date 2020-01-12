@@ -57,7 +57,7 @@ a{
   margin-left: -150px;
 }
 .mid2{
-  position: absolute;
+  position: fixed;
   top:50%;
   left:50%;
   margin-left: -150px;
