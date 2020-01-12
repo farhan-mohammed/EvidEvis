@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ba00a0ac1e7df6b9d37367abff04d590",
+    "revision": "15c5582a5e88329418ace23382e90e7c",
     "url": "/EvidEvis/index.html"
   },
   {
-    "revision": "d4ec9ddafea41d82dcd5",
+    "revision": "e04fab263862e2be8875",
     "url": "/EvidEvis/static/css/main.7d752c0c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/EvidEvis/static/js/2.ba4904f6.chunk.js.LICENSE"
   },
   {
-    "revision": "d4ec9ddafea41d82dcd5",
-    "url": "/EvidEvis/static/js/main.cbed42dd.chunk.js"
+    "revision": "e04fab263862e2be8875",
+    "url": "/EvidEvis/static/js/main.1d3a472e.chunk.js"
   },
   {
     "revision": "0074b1e398103a6fd896",
