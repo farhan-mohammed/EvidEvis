@@ -1,0 +1,12 @@
+{
+	"name": "timescaper",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "json-server -p 5000 --watch clean.json"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
