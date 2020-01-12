@@ -35,15 +35,20 @@ class Canvas extends React.Component {
 		}
 	};
   submitname(){
+    var t = this.state.points;
     const input = this.refs.name;
     const _location = new Location({ name: input.value, x: this.state.savedx, y: this.state.savedy });
+    console.log(_location)
     input.value = '';
     t.push(_location);
-    var t = this.state.points;
     this.setState({ points: t });
+
+    const table = this.refs.table2;
+    table.update(t);
 
     const nametaker = this.refs.nametaker;
     nametaker.classList.add('hidden');
+    this.updateCanvas();
 
   }
 	handleBackgroundChange(e) {
@@ -53,12 +58,17 @@ class Canvas extends React.Component {
 		const ctx = canvas.getContext('2d');
     const choose_image = this.refs.map;
     choose_image.classList.add('hidden')
+    const _table1 = this.refs.table1
+    _table1.classList.remove('hidden')
+
 		var img = new Image();
 		img.onload = function() {
 			ctx.drawImage(img, 20, 20);
       //canvas.backgroundImage = img;
 		};
 		img.src = URL.createObjectURL(e.target.files[0]);
+
+
 	}
 
 	updateCanvas = () => {
@@ -95,7 +105,7 @@ class Canvas extends React.Component {
         <ul className="table-container btn-dark mid2 hidden" ref='nametaker'>
           <li className='box btn-dark table-head nmu'>Name of location</li>
           <li className='box btn-dark nmu'><input className='box btn-light flex-item' tabletype="text" ref="name"/></li>
-          <li className="box btn-dark"><a className="fn-light"href="#" onClick="submitname()">Submit</a></li>
+          <li className="box btn-dark"><a className="fn-light"href="#" onClick={()=>{this.submitname()}}>Submit</a></li>
         </ul>
         <div style={{ position: 'relative', ...stretchO }} className="stretch flex-container">
 					<canvas
@@ -117,12 +127,11 @@ class Canvas extends React.Component {
 						}}
 					/>
           <img ref="image" style={stretchO} position="absolute" src={map} className="hidden tt" id="im"/>
-          <div className='flex-item'>
-          <DataTable className="mleft" ref="table1"/>
-          </div>
-
 
 				</div>
+        <div  id="tb-right" className='hidden' ref="table1">
+        <DataTable className="mleft" ref='table2'/>
+        </div>
 			</div>
 		);
 	}

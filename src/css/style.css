@@ -34,6 +34,11 @@ a{
 #upload{
   padding-top:40px;
 }
+#tb-right{
+  position: absolute;
+  right:90px;
+  top:100px;
+}
 .pf{flex:0.1;height:130px;}
 .mid{
   margin-top: 150px;
