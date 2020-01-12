@@ -36,6 +36,7 @@ class Canvas extends React.Component {
 		}
 	};
   submitname=()=>{
+
     var t = this.state.points;
     const input = this.refs.name;
     const _location = new Location({ name: input.value, x: this.state.savedx, y: this.state.savedy });

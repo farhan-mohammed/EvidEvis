@@ -9,11 +9,15 @@ class DataTable extends React.Component {
 			resp:{}
 		}
 	}
-	renderElements=()=>{
-		return (this.props.elements.map((x)=>{return <li class="box btn-light table-entry" key={x} onClick={()=>{    this.searchDeviceID(x)  }}     >{x}</li>}))
+	renderElements=(k)=>{
+		return (this.props.elements.map((x)=>{return <li class="box btn-light table-entry" key={x} onClick={()=>{ if(['Veronica','Thomas','Jason','Rob','Kristina','Marc-Andre','Dave','Salina','Harrison'].includes(x)){console.log('test');this.searchCharacter(x)}else{this.searchDeviceID(x)}  }}     >{x}</li>}))
 	}
 	searchDeviceID = async (devID) => {
           const apiResponse = await ListQuery.get(`/events?device-id=${devID.toString()}`);
+          this.setState({ resp:apiResponse.data});
+      };
+	searchCharacter = async (devID) => {
+          const apiResponse = await ListQuery.get(`/events?guest-id=${devID.toString()}`);
           this.setState({ resp:apiResponse.data});
       };
 	searchTime = async(devID) =>{
