@@ -42,6 +42,13 @@ a{
   left: 50%;
   margin-left: -150px;
 }
+.mid2{
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left: -150px;
+  z-index: 150;
+}
 .fn-light{  color: #ecf0f1;}
 input[type=text]{
   width:100%;

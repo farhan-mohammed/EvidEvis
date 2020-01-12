@@ -18,7 +18,6 @@ class Canvas extends React.Component {
 		var rect = canvas.getBoundingClientRect();
 		x = x - rect.left;
 		y = y - rect.top;
-		const input = this.refs.name;
 
 		var hit = undefined;
 		for (let point of this.state.points) {
@@ -29,20 +28,22 @@ class Canvas extends React.Component {
     const nametaker = this.refs.nametaker;
 		if (hit !== undefined) {
 			alert('Selected ' + hit);
-		} else if (input.value == '') {
-      nametaker.classList.remove('hidden');
 		} else {
-			const _location = new Location({ name: input.value, x: x, y: y });
-			input.value = '';
-			t.push(_location);
-			this.setState({ points: t });
-
-      const table1 = this.refs.table1;
-      table1.update(this.state.points)
-			this.updateCanvas();
+      nametaker.classList.remove('hidden');
+      this.state.savedx = x
+      this.state.savedy = y
 		}
 	};
   submitname(){
+    const input = this.refs.name;
+    const _location = new Location({ name: input.value, x: this.state.savedx, y: this.state.savedy });
+    input.value = '';
+    t.push(_location);
+    var t = this.state.points;
+    this.setState({ points: t });
+
+    const nametaker = this.refs.nametaker;
+    nametaker.classList.add('hidden');
 
   }
 	handleBackgroundChange(e) {
@@ -91,10 +92,10 @@ class Canvas extends React.Component {
             <div class="pf"></div>
           </div>
         </div>
-        <ul className="table-container btn-dark mid hidden" ref='nametaker'>
+        <ul className="table-container btn-dark mid2 hidden" ref='nametaker'>
           <li className='box btn-dark table-head nmu'>Name of location</li>
           <li className='box btn-dark nmu'><input className='box btn-light flex-item' tabletype="text" ref="name"/></li>
-          <li className="box btn-dark"><a className="fn-light"href="#" onclick="submitname">Submit</a></li>
+          <li className="box btn-dark"><a className="fn-light"href="#" onClick="submitname()">Submit</a></li>
         </ul>
         <div style={{ position: 'relative', ...stretchO }} className="stretch flex-container">
 					<canvas
