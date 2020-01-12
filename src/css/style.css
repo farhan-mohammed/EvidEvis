@@ -9,6 +9,19 @@ body {
   background-color: #fffffa;
 }
 
+input{
+  background-color : #d1d1d1;
+}
+.cnvs{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.stretch{
+
+  height: 100%;
+  width:100%;
+}
 .container {
   margin-right: auto;
   margin-left: auto;

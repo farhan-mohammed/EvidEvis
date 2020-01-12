@@ -14,9 +14,7 @@ export default class Welcome extends Component {
     renderProfileButton =()=>{
         if (!this.state.numSavedProfiles===0){
             return (
-
                 <Link to="/savedprofiles"><div className="welSelector__View welSelector_Button">View Saved Profiles</div></Link>
-
             )
         }
     }
@@ -28,7 +26,7 @@ export default class Welcome extends Component {
                     <Link to="/setup"><div className="welSelector__Setup welSelector_Button">Create a setup</div></Link>
                     {this.renderProfileButton()}
                 </div>
-                
+
             </div>
         )
     }
