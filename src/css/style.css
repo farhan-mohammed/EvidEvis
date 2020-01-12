@@ -5,23 +5,14 @@
   border: 0;
 }
 
+input, textarea {
+  background-color: #d1d1d1;
+}
+
 body {
   background-color: #fffffa;
 }
 
-input{
-  background-color : #d1d1d1;
-}
-.cnvs{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.stretch{
-
-  height: 100%;
-  width:100%;
-}
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -134,5 +125,29 @@ input{
 
 .welSelector_Button:hover {
   opacity: 0.5;
+}
+
+.container {
+  padding-bottom: 10vh;
+}
+
+.cnvs {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.stretch {
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  background-color: #d1d1d1;
+}
+
+.tt {
+  background-size: cover;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

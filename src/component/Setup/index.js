@@ -4,7 +4,7 @@ import Canvas from './canvas.js';
 export default class Setup extends Component {
     render(){
         return(
-        <div className="stretch">
+        <div style={{width:'100%'}}>
           <Canvas ref="myCanvas"></Canvas>
         </div>)
       }
