@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/EvidEvis/precache-manifest.9f1ed75980b8e5c311e8889f2bdb7705.js"
+  "/EvidEvis/precache-manifest.8b9cc8f7eded08764bbf22f07dc49414.js"
 );
 
 self.addEventListener('message', (event) => {
