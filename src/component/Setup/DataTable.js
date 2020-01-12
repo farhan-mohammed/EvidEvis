@@ -1,36 +1,31 @@
 import { map } from './map.png';
 import React from 'react';
-
+import DataList from './DataList.js'
+import ListQuery from '../apis/basic.js'
 class DataTable extends React.Component {
 	constructor(props) {
 		super(props);
-		this.states = {
-			elements: []
+		this.state = {
+			resp:{}
 		}
 	}
-
-	componentDidMount() {
+	renderElements=()=>{
+		return (this.props.elements.map((x)=>{return <li class="box btn-light table-entry" key={x} onClick={()=>{    this.searchDeviceID(x)  }}     >{x}</li>}))
 	}
-
-	update(list){
-		this.states.elements = []
-		for(let item of list){
-//			var reactNodeLi = React.createElement('li', {id:'li'}, item);
-			const classes='box btn-light table-entry'
-			var li = React.createElement('li',{class:'box btn-light table-entry'},
-				[React.createElement('a', {href:item.props.name}, item.props.name)])
-			this.states.elements.push(li);
-		}
-		console.log('test', this.states.elements)
-		this.forceUpdate();
-	}
+	searchDeviceID = async (devID) => {
+          const apiResponse = await ListQuery.get(`/events?device-id=${devID.toString()}`);
+          this.setState({ resp:apiResponse.data});
+      };
 	render() {
-		const elements = this.states.elements;
+		console.log(this.props)
 		return(
+			<span>
 			<ul className='table-container'>
 				<li className='box btn-dark table-head'>Locations</li>
-				{elements}
+				{this.renderElements()}
 			</ul>
+			<DataList dataResponse = {this.state.resp}/>
+			</span>
 		)
 	}
 }

@@ -7,7 +7,8 @@ class Canvas extends React.Component {
 		super(props);
 		this.state = {
 			points: [],
-			pic: undefined
+			pic: undefined,
+      elements:[]
 		};
 		this.handleBackgroundChange = this.handleBackgroundChange.bind(this);
 	}
@@ -34,17 +35,19 @@ class Canvas extends React.Component {
       this.state.savedy = y
 		}
 	};
-  submitname(){
+  submitname=()=>{
     var t = this.state.points;
     const input = this.refs.name;
     const _location = new Location({ name: input.value, x: this.state.savedx, y: this.state.savedy });
-    console.log(_location)
+
+    const dads = this.state.elements
+    dads.push(input.value)
+
     input.value = '';
     t.push(_location);
     this.setState({ points: t });
 
-    const table = this.refs.table2;
-    table.update(t);
+    this.setState({elements:dads})
 
     const nametaker = this.refs.nametaker;
     nametaker.classList.add('hidden');
@@ -56,10 +59,13 @@ class Canvas extends React.Component {
 		const file = e.target.files[0];
 		const canvas = this.refs.bgcanvas;
 		const ctx = canvas.getContext('2d');
-    const choose_image = this.refs.map;
+
+    const choose_image  = this.refs.map;
+    const _table1       = this.refs.table1;
+    const _timeline     = this.refs.timeline;
     choose_image.classList.add('hidden')
-    const _table1 = this.refs.table1
     _table1.classList.remove('hidden')
+    _timeline.classList.remove('hidden')
 
 		var img = new Image();
 		img.onload = function() {
@@ -91,7 +97,7 @@ class Canvas extends React.Component {
 		const cnvsHeight = '700px';
 		const stretchO = { width: cnvsWidth, height: cnvsHeight };
 		return (
-			<div className="stretch">
+
         <div className="table-container btn-dark mid" ref="map">
           <p class="box btn-dark table-head">Submit a picture</p>
           <div class="flex-container">
@@ -130,9 +136,19 @@ class Canvas extends React.Component {
 
 				</div>
         <div  id="tb-right" className='hidden' ref="table1">
-        <DataTable className="mleft" ref='table2'/>
+        <DataTable elements={this.state.elements} className="mleft" ref='table2' />
         </div>
+        <canvas
+          ref="timeline"
+          id="timeline"
+          className="bp hidden"
+          onClick={(e) => {
+            this.update(e.clientX, e.clientY);
+          }}
+        />
 			</div>
+
+
 		);
 	}
 }
