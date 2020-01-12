@@ -97,6 +97,7 @@ class Canvas extends React.Component {
 		const cnvsHeight = '700px';
 		const stretchO = { width: cnvsWidth, height: cnvsHeight };
 		return (
+			<div className="stretch">
 
         <div className="table-container btn-dark mid" ref="map">
           <p class="box btn-dark table-head">Submit a picture</p>
@@ -147,7 +148,6 @@ class Canvas extends React.Component {
           }}
         />
 			</div>
-
 
 		);
 	}
